@@ -77,12 +77,17 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dtRatingDescription" />
       <Variable x:TypeArguments="x:String" Name="StringPath">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">Input\IMdb.xlsx</Literal>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StringRootPath + &quot;Input\IMdb.xlsx&quot;" />
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="StringPathOutput">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">Output\Movies.xlsx</Literal>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StringRootPath + &quot;Output\Movies.xlsx&quot;" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="StringRootPath">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory().ToString" />
         </Variable.Default>
       </Variable>
     </Sequence.Variables>
@@ -91,7 +96,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Leer archivo - START&quot; + StringPath]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Leer archivo -  START&quot; + StringPath]" />
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[StringPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
